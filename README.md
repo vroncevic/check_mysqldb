@@ -1,4 +1,4 @@
-Checking MySQL DB (Bash script) version 1.0
+Checking MySQL DB (Bash scripts)
 ================================================================================
 
 The README is used to introduce the tool and provide instructions on
