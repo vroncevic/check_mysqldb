@@ -12,10 +12,7 @@ UTIL=$UTIL_ROOT/sh-util-srv/$UTIL_VERSION
 UTIL_LOG=$UTIL/log
 
 . $UTIL/bin/checkroot.sh
-. $UTIL/bin/checktool.sh
 . $UTIL/bin/loadconf.sh
-. $UTIL/bin/sendmail.sh
-. $UTIL/bin/checkop.sh
 . $UTIL/bin/logging.sh
 . $UTIL/bin/usage.sh
 . $UTIL/bin/devel.sh
@@ -46,11 +43,9 @@ TOOL_DBG="false"
 # @brief   Main function 
 # @param   Value required database name
 # @exitval function __atmanger exit with integer value
-#			0   - success operation 
-#			128 - failed to load config file
-#			129 - missing catalina script file
-#			130 - missing argument
-#			131 - wrong argument (operation)
+#			0   - tool finished with success operation 
+#			128 - missing argument(s) from cli 
+#			129 - failed to load tool script configuration from file 
 #
 # @usage
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -60,33 +55,52 @@ TOOL_DBG="false"
 #
 function __checkdb() {
 	local DATABASE_NAME=$1
+	local FUNC=${FUNCNAME[0]} 
+	local MSG=""
 	if [ -n "$DATABASE_NAME" ]; then
-		printf "\n%s\n" "$TOOL_NAME $TOOL_VERSION"
-		printf "%s\n\n" "Powered by Frobas `date`"
-		RESULT=`mysql -uroot --skip-column-names -e "SHOW DATABASES LIKE '$DATABASE_NAME'"`
+		declare -A configckdb=()
+		__loadconf $CHECKDB_CFG configckdb
+		local STATUS=$?
+		if [ "$STATUS" -eq "$NOT_SUCCESS" ]; then
+			MSG="Failed to load tool script configuration"
+			if [ "$TOOL_DBG" == "true" ]; then
+				printf "$DSTA" "$CHECKDB_TOOL" "$FUNC" "$MSG"
+			else
+				printf "$SEND" "[$CHECKDB_TOOL]" "$MSG"
+			fi
+			exit 129
+		fi
+		local RESULT=`mysql -uroot --skip-column-names -e "SHOW DATABASES LIKE '$DATABASE_NAME'"`
 		if [ "$RESULT" == "$DATABASE_NAME" ]; then
-			printf "%s\n\n" "Database [$DATABASE_NAME] exist"
-		else
-			printf "%s\n\n" "Database [$DATABASE_NAME] does not exist"
+			MSG="Database [$DATABASE_NAME] exist"
+			printf "%s\n\n" "$MSG"
+			if [ "${configckdb[LOGGING]}" == "true" ]; then
+				LOG[MSG]=$MSG
+				LOG[FLAG]="info"
+				__logging $LOG
+			fi
+		fi
+		MSG="Database [$DATABASE_NAME] does not exist"
+		printf "%s\n\n" "$MSG"
+		if [ "${configckdb[LOGGING]}" == "true" ]; then
+			LOG[MSG]=$MSG
+			LOG[FLAG]="info"
+			__logging $LOG
 		fi
 		exit 0
-	else
-		printf "\n%s\n" "Usage : $TOOL_NAME [DATABASE_NAME]"
-		printf "%s\n\n" "Example $TOOL_NAME openit"	
-		exit 127
 	fi
+	__usage $OSSL_USAGE
+	exit 128
 }
 
 #
 # @brief   Main entry point
 # @param   Value required  database name
 # @exitval Script tool checkdb exit with integer value
-#			0   - success operation 
-# 			127 - run as root user
-#			128 - failed to load config file
-#			129 - missing catalina script file
-#			130 - missing argument
-#			131 - wrong argument (operation)
+#			0   - tool finished with success operation 
+# 			127 - run tool script as root user from cli
+#			128 - missing argument(s) from cli 
+#			129 - failed to load tool script configuration from file 
 #
 printf "\n%s\n%s\n\n" "$CHECKDB_TOOL $CHECKDB_VERSION" "`date`"
 __checkroot
@@ -98,3 +112,4 @@ if [ "$STATUS" -eq "$SUCCESS" ]; then
 fi
 
 exit 127
+
