@@ -16,6 +16,7 @@ UTIL_LOG=$UTIL/log
 . $UTIL/bin/checkroot.sh
 . $UTIL/bin/logging.sh
 . $UTIL/bin/loadconf.sh
+. $UTIL/bin/progressbar.sh
 
 CHECKDB_TOOL=checkdb
 CHECKDB_VERSION=ver.1.0
