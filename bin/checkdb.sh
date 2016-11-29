@@ -11,11 +11,11 @@ UTIL_VERSION=ver.1.0
 UTIL=$UTIL_ROOT/sh-util-srv/$UTIL_VERSION
 UTIL_LOG=$UTIL/log
 
-. $UTIL/bin/checkroot.sh
-. $UTIL/bin/loadconf.sh
-. $UTIL/bin/logging.sh
-. $UTIL/bin/usage.sh
 . $UTIL/bin/devel.sh
+. $UTIL/bin/usage.sh
+. $UTIL/bin/checkroot.sh
+. $UTIL/bin/logging.sh
+. $UTIL/bin/loadconf.sh
 
 CHECKDB_TOOL=checkdb
 CHECKDB_VERSION=ver.1.0
@@ -24,17 +24,23 @@ CHECKDB_CFG=$CHECKDB_HOME/conf/$CHECKDB_TOOL.cfg
 CHECKDB_LOG=$CHECKDB_HOME/log
 
 declare -A CHECKDB_USAGE=(
-	[TOOL_NAME]="__$CHECKDB_TOOL"
-	[ARG1]="[CHECKDB_DATABASE] Database name"
-	[EX-PRE]="# Check database TEST"
-	[EX]="__$CHECKDB_TOOL TEST"
+	[USAGE_TOOL]="__$CHECKDB_TOOL"
+	[USAGE_ARG1]="[CHECKDB_DATABASE] Database name"
+	[USAGE_EX_PRE]="# Check database TEST"
+	[USAGE_EX]="__$CHECKDB_TOOL TEST"
 )
 
-declare -A LOG=(
-	[TOOL]="$CHECKDB_TOOL"
-	[FLAG]="info"
-	[PATH]="$CHECKDB_LOG"
-	[MSG]=""
+declare -A CHECKDB_LOG=(
+	[LOG_TOOL]="$CHECKDB_TOOL"
+	[LOG_FLAG]="info"
+	[LOG_PATH]="$CHECKDB_LOG"
+	[LOG_MSGE]="None"
+)
+
+declare -A PB_STRUCTURE=(
+	[BAR_WIDTH]=50
+	[MAX_PERCENT]=100
+	[SLEEP]=0.01
 )
 
 TOOL_DBG="false"
@@ -56,17 +62,21 @@ TOOL_DBG="false"
 function __checkdb() {
 	local DATABASE_NAME=$1
 	local FUNC=${FUNCNAME[0]} 
-	local MSG=""
+	local MSG="None"
 	if [ -n "$DATABASE_NAME" ]; then
-		declare -A configckdb=()
-		__loadconf $CHECKDB_CFG configckdb
+		MSG="Loading basic configuration"
+		printf "$SEND" "$CHECKDB_TOOL" "$MSG"
+		__progressbar PB_STRUCTURE
+		printf "%s\n\n" ""
+		declare -A configcheckdb=()
+		__loadconf $CHECKDB_CFG configcheckdb
 		local STATUS=$?
-		if [ "$STATUS" -eq "$NOT_SUCCESS" ]; then
+		if [ $STATUS -eq $NOT_SUCCESS ]; then
 			MSG="Failed to load tool script configuration"
 			if [ "$TOOL_DBG" == "true" ]; then
 				printf "$DSTA" "$CHECKDB_TOOL" "$FUNC" "$MSG"
 			else
-				printf "$SEND" "[$CHECKDB_TOOL]" "$MSG"
+				printf "$SEND" "$CHECKDB_TOOL" "$MSG"
 			fi
 			exit 129
 		fi
@@ -74,22 +84,22 @@ function __checkdb() {
 		if [ "$RESULT" == "$DATABASE_NAME" ]; then
 			MSG="Database [$DATABASE_NAME] exist"
 			printf "%s\n\n" "$MSG"
-			if [ "${configckdb[LOGGING]}" == "true" ]; then
-				LOG[MSG]=$MSG
-				LOG[FLAG]="info"
-				__logging $LOG
+			if [ "${configcheckdb[LOGGING]}" == "true" ]; then
+				CHECKDB_LOG[MSGE]=$MSG
+				CHECKDB_LOG[FLAG]="info"
+				__logging CHECKDB_LOG
 			fi
 		fi
 		MSG="Database [$DATABASE_NAME] does not exist"
 		printf "%s\n\n" "$MSG"
-		if [ "${configckdb[LOGGING]}" == "true" ]; then
-			LOG[MSG]=$MSG
-			LOG[FLAG]="info"
-			__logging $LOG
+		if [ "${configcheckdb[LOGGING]}" == "true" ]; then
+			CHECKDB_LOG[MSGE]=$MSG
+			CHECKDB_LOG[FLAG]="info"
+			__logging CHECKDB_LOG
 		fi
 		exit 0
 	fi
-	__usage $OSSL_USAGE
+	__usage OSSL_USAGE
 	exit 128
 }
 
@@ -106,9 +116,7 @@ printf "\n%s\n%s\n\n" "$CHECKDB_TOOL $CHECKDB_VERSION" "`date`"
 __checkroot
 STATUS=$?
 if [ "$STATUS" -eq "$SUCCESS" ]; then
-	set -u
-	CHECKDB_DATABASE=${1:-}
-	__checkdb "$CHECKDB_DATABASE"
+	__checkdb $1
 fi
 
 exit 127
