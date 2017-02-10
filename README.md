@@ -1,4 +1,4 @@
-Checking MySQL DB (Bash scripts).
+Checking MySQL DB (Bash script).
 ================================================================================
 
 The README is used to introduce the tool and provide instructions on
@@ -9,27 +9,27 @@ INSTALLATION
 
 To install this tool type the following:
 
-	cp -R ~/checkdb/bin/   /root/scripts/checkdb/ver.1.0/
+	cp -R ~/check_mysqldb/bin/   /root/scripts/check_mysqldb/ver.1.0/
 
-	cp -R ~/checkdb/conf/  /root/scripts/checkdb/ver.1.0/
+	cp -R ~/check_mysqldb/conf/  /root/scripts/check_mysqldb/ver.1.0/
 
-	cp -R ~/checkdb/log/   /root/scripts/checkdb/ver.1.0/
+	cp -R ~/check_mysqldb/log/   /root/scripts/check_mysqldb/ver.1.0/
 
 
 DEPENDENCIES
 
 This tool requires these other modules and libraries:
 
-	sh-util https://github.com/vroncevic/sh-util
+	sh_util https://github.com/vroncevic/sh_util
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2016 by https://github.com/vroncevic/checkdb
+Copyright (C) 2016 by https://github.com/vroncevic/check_mysqldb
 
 This tool is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
 at your option, any later version of Bash 4 you may have available.
 
-![alt tag](https://raw.githubusercontent.com/vroncevic/checkdb/master/bash_logo.png)
-![alt tag](https://raw.githubusercontent.com/vroncevic/checkdb/master/linux_logo.jpg)
+![alt tag](https://raw.githubusercontent.com/vroncevic/check_mysqldb/master/bash_logo.png)
+![alt tag](https://raw.githubusercontent.com/vroncevic/check_mysqldb/master/linux_logo.jpg)
 
