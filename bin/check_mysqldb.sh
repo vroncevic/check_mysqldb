@@ -56,7 +56,6 @@ TOOL_NOTIFY="false"
 #			0   - tool finished with success operation
 #			128 - missing argument(s) from cli
 #			129 - failed to load tool script configuration from file
-#			130 - failed to get password from console
 #
 # @usage
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -110,7 +109,6 @@ function __check_mysqldb() {
 #			127 - run tool script as root user from cli
 #			128 - missing argument(s) from cli
 #			129 - failed to load tool script configuration from file
-#			130 - failed to get password from console
 #
 printf "\n%s\n%s\n\n" "${CHECK_MYSQLDB_TOOL} ${CHECK_MYSQLDB_VERSION}" "`date`"
 __check_root
