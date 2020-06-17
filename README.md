@@ -1,8 +1,8 @@
 # Checking MySQL DB.
 
-***check_mysqldb*** is shell tool for checking MySQL database.
+**check_mysqldb** is shell tool for checking MySQL database.
 
-Developed in bash code: ***100%***.
+Developed in [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) code: **100%**.
 
 The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
@@ -14,19 +14,19 @@ other information that should be provided before the tool is installed.
 <!-- START doctoc -->
 **Table of Contents**
 
-- [Installation](https://github.com/vroncevic/check_mysqldb#installation)
-- [Usage](https://github.com/vroncevic/check_mysqldb#usage)
-- [Dependencies](https://github.com/vroncevic/check_mysqldb#dependencies)
-- [Shell tool structure](https://github.com/vroncevic/check_mysqldb#shell-tool-structure)
-- [Docs](https://github.com/vroncevic/check_mysqldb#docs)
-- [Copyright and Licence](https://github.com/vroncevic/check_mysqldb#copyright-and-licence)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Shell tool structure](#shell-tool-structure)
+- [Docs](#docs)
+- [Copyright and Licence](#copyright-and-licence)
 <!-- END doctoc -->
 
 ### INSTALLATION
 
 Navigate to release [page](https://github.com/vroncevic/check_mysqldb/releases) download and extract release archive.
 
-To install modules type the following:
+To install **check_mysqldb** type the following:
 
 ```
 tar xvzf check_mysqldb-x.y.z.tar.gz
@@ -54,15 +54,14 @@ check_mysqldb database_name
 
 ### DEPENDENCIES
 
-This tool requires these other modules and libraries:
-
-* sh_util https://github.com/vroncevic/sh_util
+**check_mysqldb** requires next modules and libraries:
+* sh_util [https://github.com/vroncevic/sh_util](https://github.com/vroncevic/sh_util)
 
 ### SHELL TOOL STRUCTURE
 
-***check_mysqldb*** is based on MOP.
+**check_mysqldb** is based on MOP.
 
-Shell tool structure:
+Code structure:
 ```
 .
 ├── bin/
@@ -78,14 +77,15 @@ Shell tool structure:
 [![Documentation Status](https://readthedocs.org/projects/check_mysqldb/badge/?version=latest)](https://check_mysqldb.readthedocs.io/projects/check_mysqldb/en/latest/?badge=latest)
 
 More documentation and info at:
-
-* https://check_mysqldb.readthedocs.io/en/latest/
+* [https://check_mysqldb.readthedocs.io/en/latest/](https://check_mysqldb.readthedocs.io/en/latest/)
+* [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
+* [https://mariadb.com/kb/en/documentation/](https://mariadb.com/kb/en/documentation/)
 
 ### COPYRIGHT AND LICENCE
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2018 by https://vroncevic.github.io/check_mysqldb
+Copyright (C) 2016 by [vroncevic.github.io/check_mysqldb](https://vroncevic.github.io/check_mysqldb)
 
 This tool is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
