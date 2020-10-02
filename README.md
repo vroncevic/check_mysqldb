@@ -1,8 +1,10 @@
 # Checking MySQL DB
 
-**check_mysqldb** is shell tool for checking MySQL database.
+**check_mysqldb** is shell tool for checking **[MySQL database](https://mariadb.org/)**.
 
 Developed in [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) code: **100%**.
+
+[![check_mysqldb shell checker](https://github.com/vroncevic/check_mysqldb/workflows/check_mysqldb%20shell%20checker/badge.svg)](https://github.com/vroncevic/check_mysqldb/actions?query=workflow%3A%22check_mysqldb+shell+checker%22)
 
 The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
@@ -39,6 +41,8 @@ cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.1.0/
 ![alt tag](https://raw.githubusercontent.com/vroncevic/check_mysqldb/dev/docs/setup_tree.png)
 
 Or You can use docker to create image/container.
+
+[![check_mysqldb docker checker](https://github.com/vroncevic/check_mysqldb/workflows/check_mysqldb%20docker%20checker/badge.svg)](https://github.com/vroncevic/check_mysqldb/actions?query=workflow%3A%22check_mysqldb+docker+checker%22)
 
 ### Usage
 
