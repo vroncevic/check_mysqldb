@@ -2,7 +2,7 @@
 
 **check_mysqldb** is shell tool for checking **[MySQL database](https://mariadb.org/)**.
 
-Developed in [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) code: **100%**.
+Developed in **[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))** code: **100%**.
 
 [![check_mysqldb shell checker](https://github.com/vroncevic/check_mysqldb/workflows/check_mysqldb%20shell%20checker/badge.svg)](https://github.com/vroncevic/check_mysqldb/actions?query=workflow%3A%22check_mysqldb+shell+checker%22)
 
