@@ -1,3 +1,5 @@
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/check_mysqldb/dev/docs/check_mysqldb_logo.png" width="25%">
+
 # Checking MySQL DB
 
 **check_mysqldb** is shell tool for checking **[MySQL database](https://mariadb.org/)**.
@@ -32,11 +34,11 @@ Navigate to release **[page](https://github.com/vroncevic/check_mysqldb/releases
 To install **check_mysqldb** type the following:
 
 ```
-tar xvzf check_mysqldb-x.y.z.tar.gz
-cd check_mysqldb-x.y.z
-cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.1.0/
-cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.1.0/
-cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.1.0/
+tar xvzf check_mysqldb-x.y.tar.gz
+cd check_mysqldb-x.y
+cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.x.y/
+cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.x.y/
+cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.x.y/
 ```
 ![alt tag](https://raw.githubusercontent.com/vroncevic/check_mysqldb/dev/docs/setup_tree.png)
 
@@ -48,7 +50,7 @@ Or You can use docker to create image/container.
 
 ```
 # Create symlink for shell tool
-ln -s /root/scripts/check_mysqldb/ver.1.0/bin/check_mysqldb.sh /root/bin/check_mysqldb
+ln -s /root/scripts/check_mysqldb/ver.x.y/bin/check_mysqldb.sh /root/bin/check_mysqldb
 
 # Setting PATH
 export PATH=${PATH}:/root/bin/
@@ -68,7 +70,7 @@ check_mysqldb database_name
 
 Code structure:
 ```
-.
+sh_tool/
 ├── bin/
 │   └── check_mysqldb.sh
 ├── conf/
