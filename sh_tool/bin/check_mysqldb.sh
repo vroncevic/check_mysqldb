@@ -54,6 +54,7 @@ TOOL_NOTIFY="false"
 # @param   Value required database name
 # @exitval Function __atmanger exit with integer value
 #            0   - tool finished with success operation
+#            127 - run tool script as root user from cli
 #            128 - missing argument(s) from cli
 #            129 - failed to load tool script configuration from file
 #
@@ -104,11 +105,7 @@ function __check_mysqldb {
 #
 # @brief   Main entry point
 # @param   Value required  database name
-# @exitval Script tool check_mysqldb exit with integer value
-#            0   - tool finished with success operation
-#            127 - run tool script as root user from cli
-#            128 - missing argument(s) from cli
-#            129 - failed to load tool script configuration from file
+# @exitval Script tool check_mysqldb exit with integer value 0 - 129
 #
 printf "\n%s\n%s\n\n" "${CHECK_MYSQLDB_TOOL} ${CHECK_MYSQLDB_VERSION}" "`date`"
 check_root
