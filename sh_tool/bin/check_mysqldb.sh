@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Checking MySQL Database
-# @version ver.1.0.0
+# @version ver.1.0
 # @date    Tue Apr 22 21:55:20 CEST 2016
 # @company Frobas IT Department, www.frobas.com 2016
 # @author  Vladimir Roncevic <vladimir.roncevic@frobas.com>
@@ -54,7 +54,6 @@ TOOL_NOTIFY="false"
 # @param   Value required database name
 # @exitval Function __atmanger exit with integer value
 #            0   - tool finished with success operation
-#            127 - run tool script as root user from cli
 #            128 - missing argument(s) from cli
 #            129 - failed to load tool script configuration from file
 #
@@ -105,7 +104,11 @@ function __check_mysqldb {
 #
 # @brief   Main entry point
 # @param   Value required  database name
-# @exitval Script tool check_mysqldb exit with integer value 0 - 129
+# @exitval Script tool check_mysqldb exit with integer value
+#            0   - tool finished with success operation
+#            127 - run tool script as root user from cli
+#            128 - missing argument(s) from cli
+#            129 - failed to load tool script configuration from file
 #
 printf "\n%s\n%s\n\n" "${CHECK_MYSQLDB_TOOL} ${CHECK_MYSQLDB_VERSION}" "`date`"
 check_root
