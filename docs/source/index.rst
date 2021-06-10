@@ -41,11 +41,11 @@ To install **check_mysqldb** type the following:
 
 .. code-block:: bash
 
-   tar xvzf check_mysqldb-x.y.z.tar.gz
-   cd check_mysqldb-x.y.z
-   cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.1.0/
-   cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.1.0/
-   cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.1.0/
+   tar xvzf check_mysqldb-x.y.tar.gz
+   cd check_mysqldb-x.y
+   cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.x.y/
+   cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.x.y/
+   cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.x.y/
 
 Or You can use Docker to create image/container.
 
