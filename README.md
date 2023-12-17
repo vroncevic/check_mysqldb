@@ -6,7 +6,7 @@
 
 Developed in **[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))** code: **100%**.
 
-[![check_mysqldb shell checker](https://github.com/vroncevic/check_mysqldb/workflows/check_mysqldb%20shell%20checker/badge.svg)](https://github.com/vroncevic/check_mysqldb/actions?query=workflow%3A%22check_mysqldb+shell+checker%22)
+[![check_mysqldb_shell_checker](https://github.com/vroncevic/check_mysqldb/actions/workflows/check_mysqldb_shell_checker.yml/badge.svg)](https://github.com/vroncevic/check_mysqldb/actions/workflows/check_mysqldb_shell_checker.yml)
 
 The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
@@ -74,8 +74,6 @@ lrwxrwxrwx 1 root root 56 Nov 21 21:08 /root/bin/check_mysqldb -> /root/scripts/
 
 Or You can use docker to create image/container.
 
-[![check_mysqldb docker checker](https://github.com/vroncevic/check_mysqldb/workflows/check_mysqldb%20docker%20checker/badge.svg)](https://github.com/vroncevic/check_mysqldb/actions?query=workflow%3A%22check_mysqldb+docker+checker%22)
-
 ### Usage
 
 ```
@@ -93,14 +91,17 @@ Sun Nov 21 20:20:16 UTC 2021
 
 [check_root] Check permission for current session? [ok]
 [check_root] Done
-
-	                                                                     
-	      _               _                                _     _ _     
-	  ___| |__   ___  ___| | __  _ __ ___  _   _ ___  __ _| | __| | |__  
-	 / __| '_ \ / _ \/ __| |/ / | '_ ` _ \| | | / __|/ _` | |/ _` | '_ \ 
-	| (__| | | |  __/ (__|   <  | | | | | | |_| \__ \ (_| | | (_| | |_) |
-	 \___|_| |_|\___|\___|_|\_\ |_| |_| |_|\__, |___/\__, |_|\__,_|_.__/ 
-	                                       |___/        |_|              
+                                                                                                          
+           ██                      ██                                                 ██      ██ ██       
+          ░██                     ░██                                                ░██     ░██░██       
+    █████ ░██       █████   █████ ░██  ██       ██████████   ██   ██  ██████  ████   ░██     ░██░██       
+   ██░░░██░██████  ██░░░██ ██░░░██░██ ██       ░░██░░██░░██ ░░██ ██  ██░░░░  ██░░██  ░██  ██████░██████   
+  ░██  ░░ ░██░░░██░███████░██  ░░ ░████         ░██ ░██ ░██  ░░███  ░░█████ ░██ ░██  ░██ ██░░░██░██░░░██  
+  ░██   ██░██  ░██░██░░░░ ░██   ██░██░██        ░██ ░██ ░██   ░██    ░░░░░██░░█████  ░██░██  ░██░██  ░██  
+  ░░█████ ░██  ░██░░██████░░█████ ░██░░██ █████ ███ ░██ ░██   ██     ██████  ░░░░██  ███░░██████░██████   
+   ░░░░░  ░░   ░░  ░░░░░░  ░░░░░  ░░  ░░ ░░░░░ ░░░  ░░  ░░   ██     ░░░░░░      ░███░░░  ░░░░░░ ░░░░░     
+                                                            ░░                  ░░░                       
+                                                                                                          
 	                                                                     
 		Info   github.io/check_mysqldb ver.2.0 
 		Issue  github.io/issue
@@ -150,10 +151,10 @@ sh_tool/
 
 ### Docs
 
-[![Documentation Status](https://readthedocs.org/projects/check_mysqldb/badge/?version=latest)](https://check_mysqldb.readthedocs.io/projects/check_mysqldb/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/check_mysqldb/badge/?version=latest)](https://check-mysqldb.readthedocs.io/projects/check_mysqldb/en/latest/?badge=latest)
 
 More documentation and info at
-* [https://check_mysqldb.readthedocs.io/en/latest/](https://check_mysqldb.readthedocs.io/en/latest/)
+* [https://check_mysqldb.readthedocs.io/en/latest/](https://check-mysqldb.readthedocs.io/en/latest/)
 * [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 * [https://mariadb.com/kb/en/documentation/](https://mariadb.com/kb/en/documentation/)
 
@@ -161,7 +162,7 @@ More documentation and info at
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2016 by [vroncevic.github.io/check_mysqldb](https://vroncevic.github.io/check_mysqldb)
+Copyright (C) 2016 - 2024 by [vroncevic.github.io/check_mysqldb](https://vroncevic.github.io/check_mysqldb)
 
 **check_mysqldb** is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
