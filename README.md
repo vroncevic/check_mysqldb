@@ -1,6 +1,6 @@
-<img align="right" src="https://raw.githubusercontent.com/vroncevic/check_mysqldb/dev/docs/check_mysqldb_logo.png" width="25%">
-
 # Checking MySQL DB
+
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/check_mysqldb/dev/docs/check_mysqldb_logo.png" width="25%">
 
 **check_mysqldb** is shell tool for checking **[MySQL database](https://mariadb.org/)**.
 
@@ -35,7 +35,7 @@ Navigate to release **[page](https://github.com/vroncevic/check_mysqldb/releases
 
 To install **check_mysqldb** type the following
 
-```
+```bash
 tar xvzf check_mysqldb-x.y.tar.gz
 cd check_mysqldb-x.y
 cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.x.y/
@@ -44,7 +44,8 @@ cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.x.y/
 ```
 
 Self generated setup script and execution
-```
+
+```bash
 ./check_mysqldb_setup.sh 
 
 [setup] installing App/Tool/Script check_mysqldb
@@ -76,7 +77,7 @@ Or You can use docker to create image/container.
 
 ### Usage
 
-```
+```bash
 # Create symlink for shell tool
 ln -s /root/scripts/check_mysqldb/ver.x.y/bin/check_mysqldb.sh /root/bin/check_mysqldb
 
@@ -135,7 +136,8 @@ Enter password:
 **check_mysqldb** is based on MOP.
 
 Shell tool structure
-```
+
+```bash
 sh_tool/
 ├── bin/
 │   ├── center.sh
