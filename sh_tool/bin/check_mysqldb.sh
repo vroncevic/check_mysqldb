@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# @brief   Apache Tomcat Server Manager
-# @version ver.2.0
+# @brief   Check MySQL database existence
+# @version ver.3.0
 # @date    Sun Nov 21 21:01:40 CET 2021
 # @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -18,19 +18,14 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/logging.sh
 .    ${UTIL}/bin/load_conf.sh
 .    ${UTIL}/bin/progress_bar.sh
+.    ${UTIL}/bin/display_logo.sh
 
 CHECK_MYSQLDB_TOOL=check_mysqldb
-CHECK_MYSQLDB_VERSION=ver.2.0
+CHECK_MYSQLDB_VERSION=ver.3.0
 CHECK_MYSQLDB_HOME=${UTIL_ROOT}/${CHECK_MYSQLDB_TOOL}/${CHECK_MYSQLDB_VERSION}
 CHECK_MYSQLDB_CFG=${CHECK_MYSQLDB_HOME}/conf/${CHECK_MYSQLDB_TOOL}.cfg
 CHECK_MYSQLDB_LOGO=${CHECK_MYSQLDB_HOME}/conf/${CHECK_MYSQLDB_TOOL}.logo
 CHECK_MYSQLDB_LOG=${CHECK_MYSQLDB_HOME}/log
-
-tabs 4
-CONSOLE_WIDTH=$(stty size | awk '{print $2}')
-
-.    ${CHECK_MYSQLDB_HOME}/bin/center.sh
-.    ${CHECK_MYSQLDB_HOME}/bin/display_logo.sh
 
 declare -A CHECK_MYSQLDB_USAGE=(
     [USAGE_TOOL]="${CHECK_MYSQLDB_TOOL}"
@@ -72,8 +67,8 @@ TOOL_NOTIFY="false"
 #
 function __check_mysqldb {
     local DN=$1
-    display_logo
     if [ -n "${DN}" ]; then
+        display_logo "vroncevic" "${CHECK_MYSQLDB_TOOL}" "${CHECK_MYSQLDB_VERSION}" "${CHECK_MYSQLDB_LOGO}"
         local FUNC=${FUNCNAME[0]} MSG="None" STATUS RESULT PASSWORD
         MSG="Loading basic configuration!"
         info_debug_message "$MSG" "$FUNC" "$CHECK_MYSQLDB_TOOL"

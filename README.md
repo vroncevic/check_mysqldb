@@ -36,20 +36,20 @@ Navigate to release **[page](https://github.com/vroncevic/check_mysqldb/releases
 To install **check_mysqldb** type the following
 
 ```bash
-tar xvzf check_mysqldb-x.y.tar.gz
-cd check_mysqldb-x.y
-cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.x.y/
-cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.x.y/
-cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.x.y/
+tar xvzf check_mysqldb-3.0.tar.gz
+cd check_mysqldb-3.0
+cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.3.0/
+cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.3.0/
+cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.3.0/
 ```
 
 Self generated setup script and execution
 
 ```bash
-./check_mysqldb_setup.sh 
+./check_mysqldb_setup.sh                  
 
 [setup] installing App/Tool/Script check_mysqldb
-	Sun 21 Nov 2021 09:08:40 PM CET
+	Tue Dec  2 10:06:13 PM CET 2025
 [setup] clean up App/Tool/Script structure
 [setup] copy App/Tool/Script structure
 [setup] remove github editor configuration files
@@ -57,11 +57,9 @@ Self generated setup script and execution
 [setup] create symbolic link of App/Tool/Script
 [setup] done
 
-/root/scripts/check_mysqldb/ver.2.0/
+/root/scripts/check_mysqldb/ver.3.0/
 ├── bin/
-│   ├── center.sh
-│   ├── check_mysqldb.sh
-│   └── display_logo.sh
+│   └── check_mysqldb.sh
 ├── conf/
 │   ├── check_mysqldb.cfg
 │   ├── check_mysqldb.logo
@@ -69,8 +67,8 @@ Self generated setup script and execution
 └── log/
     └── check_mysqldb.log
 
-3 directories, 7 files
-lrwxrwxrwx 1 root root 56 Nov 21 21:08 /root/bin/check_mysqldb -> /root/scripts/check_mysqldb/ver.2.0/bin/check_mysqldb.sh
+4 directories, 5 files
+lrwxrwxrwx 1 root root 56 Dec  2 22:06 /root/bin/check_mysqldb -> /root/scripts/check_mysqldb/ver.3.0/bin/check_mysqldb.sh
 ```
 
 Or You can use docker to create image/container.
@@ -79,7 +77,7 @@ Or You can use docker to create image/container.
 
 ```bash
 # Create symlink for shell tool
-ln -s /root/scripts/check_mysqldb/ver.x.y/bin/check_mysqldb.sh /root/bin/check_mysqldb
+ln -s /root/scripts/check_mysqldb/ver.3.0/bin/check_mysqldb.sh /root/bin/check_mysqldb
 
 # Setting PATH
 export PATH=${PATH}:/root/bin/
@@ -87,8 +85,8 @@ export PATH=${PATH}:/root/bin/
 # Checking MySQL database
 check_mysqldb mydb
 
-check_mysqldb ver.2.0
-Sun Nov 21 20:20:16 UTC 2021
+check_mysqldb ver.3.0
+Tue Dec  2 10:06:58 PM CET 2025
 
 [check_root] Check permission for current session? [ok]
 [check_root] Done
@@ -104,7 +102,7 @@ Sun Nov 21 20:20:16 UTC 2021
                                                             ░░                  ░░░                       
                                                                                                           
 	                                                                     
-		Info   github.io/check_mysqldb ver.2.0 
+		Info   github.io/check_mysqldb ver.3.0 
 		Issue  github.io/issue
 		Author vroncevic.github.io
 
@@ -112,14 +110,14 @@ Sun Nov 21 20:20:16 UTC 2021
 100% [================================================]
 
 [load_conf] Loading App/Tool/Script configuration!
-[check_cfg] Checking configuration file [/root/scripts/check_mysqldb/ver.2.0/conf/check_mysqldb.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/check_mysqldb/ver.3.0/conf/check_mysqldb.cfg] [ok]
 [check_cfg] Done
 
 [load_conf] Done
 
 Enter password: 
 [check_mysqldb] Database [mydb] exist
-[logging] Checking directory [/root/scripts/check_mysqldb/ver.2.0/log/]? [ok]
+[logging] Checking directory [/root/scripts/check_mysqldb/ver.3.0/log/]? [ok]
 [logging] Write info log!
 [logging] Done
 
@@ -140,9 +138,7 @@ Shell tool structure
 ```bash
 sh_tool/
 ├── bin/
-│   ├── center.sh
-│   ├── check_mysqldb.sh
-│   └── display_logo.sh
+│   └── check_mysqldb.sh
 ├── conf/
 │   ├── check_mysqldb.cfg
 │   ├── check_mysqldb.logo
@@ -164,7 +160,7 @@ More documentation and info at
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2016 - 2024 by [vroncevic.github.io/check_mysqldb](https://vroncevic.github.io/check_mysqldb)
+Copyright (C) 2016 - 2026 by [vroncevic.github.io/check_mysqldb](https://vroncevic.github.io/check_mysqldb)
 
 **check_mysqldb** is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
