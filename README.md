@@ -36,11 +36,11 @@ Navigate to release **[page](https://github.com/vroncevic/check_mysqldb/releases
 To install **check_mysqldb** type the following
 
 ```bash
-tar xvzf check_mysqldb-3.0.tar.gz
-cd check_mysqldb-3.0
-cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.3.0/
-cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.3.0/
-cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.3.0/
+tar xvzf check_mysqldb-4.0.tar.gz
+cd check_mysqldb-4.0
+cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.4.0/
+cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.4.0/
+cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.4.0/
 ```
 
 Self generated setup script and execution
@@ -57,7 +57,7 @@ Self generated setup script and execution
 [setup] create symbolic link of App/Tool/Script
 [setup] done
 
-/root/scripts/check_mysqldb/ver.3.0/
+/root/scripts/check_mysqldb/ver.4.0/
 ├── bin/
 │   └── check_mysqldb.sh
 ├── conf/
@@ -68,7 +68,7 @@ Self generated setup script and execution
     └── check_mysqldb.log
 
 4 directories, 5 files
-lrwxrwxrwx 1 root root 56 Dec  2 22:06 /root/bin/check_mysqldb -> /root/scripts/check_mysqldb/ver.3.0/bin/check_mysqldb.sh
+lrwxrwxrwx 1 root root 56 Dec  2 22:06 /root/bin/check_mysqldb -> /root/scripts/check_mysqldb/ver.4.0/bin/check_mysqldb.sh
 ```
 
 Or You can use docker to create image/container.
@@ -77,7 +77,7 @@ Or You can use docker to create image/container.
 
 ```bash
 # Create symlink for shell tool
-ln -s /root/scripts/check_mysqldb/ver.3.0/bin/check_mysqldb.sh /root/bin/check_mysqldb
+ln -s /root/scripts/check_mysqldb/ver.4.0/bin/check_mysqldb.sh /root/bin/check_mysqldb
 
 # Setting PATH
 export PATH=${PATH}:/root/bin/
@@ -85,7 +85,7 @@ export PATH=${PATH}:/root/bin/
 # Checking MySQL database
 check_mysqldb mydb
 
-check_mysqldb ver.3.0
+check_mysqldb ver.4.0
 Tue Dec  2 10:06:58 PM CET 2025
 
 [check_root] Check permission for current session? [ok]
@@ -102,7 +102,7 @@ Tue Dec  2 10:06:58 PM CET 2025
                                                             ░░                  ░░░                       
                                                                                                           
 	                                                                     
-		Info   github.io/check_mysqldb ver.3.0 
+		Info   github.io/check_mysqldb ver.4.0 
 		Issue  github.io/issue
 		Author vroncevic.github.io
 
@@ -110,14 +110,14 @@ Tue Dec  2 10:06:58 PM CET 2025
 100% [================================================]
 
 [load_conf] Loading App/Tool/Script configuration!
-[check_cfg] Checking configuration file [/root/scripts/check_mysqldb/ver.3.0/conf/check_mysqldb.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/check_mysqldb/ver.4.0/conf/check_mysqldb.cfg] [ok]
 [check_cfg] Done
 
 [load_conf] Done
 
 Enter password: 
 [check_mysqldb] Database [mydb] exist
-[logging] Checking directory [/root/scripts/check_mysqldb/ver.3.0/log/]? [ok]
+[logging] Checking directory [/root/scripts/check_mysqldb/ver.4.0/log/]? [ok]
 [logging] Write info log!
 [logging] Done
 
@@ -158,7 +158,7 @@ More documentation and info at
 
 ### Copyright and licence
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-4.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Copyright (C) 2016 - 2026 by [vroncevic.github.io/check_mysqldb](https://vroncevic.github.io/check_mysqldb)
 
