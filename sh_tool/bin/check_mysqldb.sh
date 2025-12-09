@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Check MySQL database existence
-# @version ver.3.0
+# @version ver.4.0
 # @date    Sun Nov 21 21:01:40 CET 2021
 # @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -11,8 +11,6 @@ UTIL_VERSION=ver.1.0
 UTIL=${UTIL_ROOT}/sh_util/${UTIL_VERSION}
 UTIL_LOG=${UTIL}/log
 
-.    ${UTIL}/bin/devel.sh
-.    ${UTIL}/bin/usage.sh
 .    ${UTIL}/bin/check_root.sh
 .    ${UTIL}/bin/check_tool.sh
 .    ${UTIL}/bin/logging.sh
@@ -21,7 +19,7 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/display_logo.sh
 
 CHECK_MYSQLDB_TOOL=check_mysqldb
-CHECK_MYSQLDB_VERSION=ver.3.0
+CHECK_MYSQLDB_VERSION=ver.4.0
 CHECK_MYSQLDB_HOME=${UTIL_ROOT}/${CHECK_MYSQLDB_TOOL}/${CHECK_MYSQLDB_VERSION}
 CHECK_MYSQLDB_CFG=${CHECK_MYSQLDB_HOME}/conf/${CHECK_MYSQLDB_TOOL}.cfg
 CHECK_MYSQLDB_LOGO=${CHECK_MYSQLDB_HOME}/conf/${CHECK_MYSQLDB_TOOL}.logo
@@ -47,6 +45,13 @@ declare -A PB_STRUCTURE=(
     [SLEEP]=0.01
 )
 
+declare -A CHECK_MYSQLDB_LOGO_DATA=(
+    [OWNER]="vroncevic"
+    [REPO]="${CHECK_MYSQLDB_TOOL}"
+    [VERSION]="${CHECK_MYSQLDB_VERSION}"
+    [LOGO]="${CHECK_MYSQLDB_LOGO}"
+)
+
 TOOL_DBG="false"
 TOOL_LOG="false"
 TOOL_NOTIFY="false"
@@ -68,7 +73,7 @@ TOOL_NOTIFY="false"
 function __check_mysqldb {
     local DN=$1
     if [ -n "${DN}" ]; then
-        display_logo "vroncevic" "${CHECK_MYSQLDB_TOOL}" "${CHECK_MYSQLDB_VERSION}" "${CHECK_MYSQLDB_LOGO}"
+        display_logo CHECK_MYSQLDB_LOGO_DATA
         local FUNC=${FUNCNAME[0]} MSG="None" STATUS RESULT PASSWORD
         MSG="Loading basic configuration!"
         info_debug_message "$MSG" "$FUNC" "$CHECK_MYSQLDB_TOOL"

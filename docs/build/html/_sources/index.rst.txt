@@ -46,11 +46,11 @@ To install **check_mysqldb** type the following
 
 .. code-block:: bash
 
-   tar xvzf check_mysqldb-3.0.tar.gz
-   cd check_mysqldb-3.0
-   cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.3.0/
-   cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.3.0/
-   cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.3.0/
+   tar xvzf check_mysqldb-4.0.tar.gz
+   cd check_mysqldb-4.0
+   cp -R ~/sh_tool/bin/   /root/scripts/check_mysqldb/ver.4.0/
+   cp -R ~/sh_tool/conf/  /root/scripts/check_mysqldb/ver.4.0/
+   cp -R ~/sh_tool/log/   /root/scripts/check_mysqldb/ver.4.0/
 
 Or You can use Docker to create image/container.
 
@@ -86,7 +86,7 @@ Copyright and licence
 |License: GPL v3| |License: Apache 2.0|
 
 .. |License: GPL v3| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
-   :target: https://www.gnu.org/licenses/gpl-3.0
+   :target: https://www.gnu.org/licenses/gpl-4.0
 
 .. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
